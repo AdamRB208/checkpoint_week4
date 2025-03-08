@@ -58,4 +58,4 @@ export class TodosController {
 
 
 // NOTE next steps check spells for put functions
-// NOTE dont forget
+// NOTE dont forget all other 
