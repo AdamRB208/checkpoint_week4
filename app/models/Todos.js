@@ -15,7 +15,7 @@ export class Todos {
         <p class="fs-3">${this.description}</p>
       </div>
       <div class="text-end">
-          <input onchange="app.TodosController.toggleTodoCompleted('${this.id}')" type="checkbox" title="Toggle Todo" ${this.completed ? 'checked' : ''} >
+          <input onchange="app.TodosController.toggleTodo('${this.id}')" type="checkbox" title="Toggle Todo" ${this.completed ? 'checked' : ''} >
           <button onclick="app.TodosController.deleteTodo('${this.id}')" class="btn btn-success mdi mdi-trash-can-outline" type="button">Delete</button>
       </div>
     `

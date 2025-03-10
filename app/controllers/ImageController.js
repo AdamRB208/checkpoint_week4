@@ -21,12 +21,13 @@ export class ImageController {
   }
 
   async drawImage() {
-    const image = AppState.activeImg
-    let drawnImage = ''
-    image.forEach(image => drawnImage += image.imageTemplate)
-    const imageElem = document.getElementById('main')
-    imageElem.innerHTML = image
+    //TODO pull image from AppState, log it
 
+    //TODO log imgURL that you want
+
+    // TODO grab Correct document ELement
+
+    // TODO Set Element Style (no log here, the whole background will change)
   }
 
 }

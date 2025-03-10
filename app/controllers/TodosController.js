@@ -9,7 +9,7 @@ export class TodosController {
   constructor() {
     AppState.on('identity', this.getTodos)
     AppState.on('todos', this.drawTodos)
-    AppState.on('todos', this.toggleTodo)
+
 
   }
 
@@ -66,6 +66,7 @@ export class TodosController {
   async toggleTodo(todoId) {
     try {
       console.log('toggling todo with the id of' + todoId);
+      //== good to here
       await todosService.updateTodo(todoId)
     } catch (error) {
       Pop.error(error, 'Could not toggle To Do')

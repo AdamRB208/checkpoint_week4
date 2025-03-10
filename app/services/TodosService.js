@@ -27,8 +27,11 @@ class TodosService {
   }
 
   async updateTodo(todoId) {
-    const foundTodo = AppState.todos.find(todo => todo.completed == todoId)
+    const foundTodo = AppState.todos.find(todo => todo.id == todoId)
+
     foundTodo.completed = !foundTodo.completed
+    console.log('toggling', foundTodo);
+    //-- this is all good code
     const response = await api.put(`api/todos/${todoId}`, foundTodo)
     console.log('Updated To Do', response.data)
     AppState.emit('todos')
