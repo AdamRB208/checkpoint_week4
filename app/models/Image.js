@@ -2,10 +2,17 @@
 
 export class Images {
   constructor(data) {
+    this.id = data.id
+    this.height = data.height
+    this.width = data.width
+    this.imgUrls = data.imgUrls
 
-    // TODO map the img properties from the sandbox
+  }
 
-    this.url = data.url
-    this.date = data.date
+
+  get imageTemplate() {
+    return `
+    <main id="${this.imgUrls}">
+    `
   }
 }
