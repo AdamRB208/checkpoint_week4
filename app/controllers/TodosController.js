@@ -9,6 +9,7 @@ export class TodosController {
   constructor() {
     AppState.on('identity', this.getTodos)
     AppState.on('todos', this.drawTodos)
+    AppState.on('todos', this.toggleTodo)
 
   }
 
@@ -29,7 +30,7 @@ export class TodosController {
     todos.forEach(todo => todoContent += todo.todosTemplate)
     const todoElem = document.getElementById('todoContent')
     todoElem.innerHTML = todoContent
-    console.log('drawing To DOs')
+    console.log('drawing To DOs');
   }
 
   async createTodo() {
@@ -51,11 +52,23 @@ export class TodosController {
       await todosService.deleteTodo(todoId)
     } catch (error) {
       Pop.error('unable to delete To Do', error)
-      console.error('unable to delete To Do', error)
+      console.error('unable to delete To Do', error);
     }
+  }
+
+  async toggleTodo(todoId) {
+    try {
+      console.log('toggling todo with the id of', todoId);
+      await todosService.updateTodo(todoId)
+    } catch (error) {
+      Pop.error(error, 'Could not toggle To Do')
+      console.error('Could not toggle To Do', error);
+    }
+
+
   }
 }
 
 
 // NOTE next steps check spells for put functions
-// NOTE dont forget all other 
+// NOTE dont forget all other controllers for img, quotes, weather...

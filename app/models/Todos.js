@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 export class Todos {
   constructor(data) {
@@ -20,6 +21,24 @@ export class Todos {
     `
   }
 
+  get deleteButton() {
+
+    const user = AppState.identity
+
+    if (user == null) {
+      return ''
+    }
+
+    if (this.creatorId != user.id) {
+      return ''
+    }
+
+    return `
+  <input onchange="app.TodosController.toggleTodoCompleted('${this.id}')" type="checkbox" title="Toggle Todo" ${this.completed ? 'checked' : ''} >
+  <button onclick="app.TodosController.deleteTodo('${this.id}')" class="btn btn-success mdi mdi-trash-can-outline" type="button">Delete</button>
+      `
+  }
 
 
 }
+

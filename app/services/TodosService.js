@@ -25,6 +25,16 @@ class TodosService {
     const todoIndex = AppState.todos.findIndex(todos => todos.id == todoId)
     AppState.todos.splice(todoIndex, 1)
   }
+
+  async updateTodo(todoId) {
+    const foundTodo = AppState.todos.find(todo => todo.completed == todoId)
+    foundTodo.completed = !foundTodo.completed
+    const response = await api.put(`api/todos/${todoId}`, foundTodo)
+    console.log('Updated To Do', response.data)
+    AppState.emit('todos')
+  }
+
+
 }
 
 export const todosService = new TodosService()
