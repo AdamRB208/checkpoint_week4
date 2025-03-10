@@ -4,17 +4,17 @@ import { api } from "../utils/Axios.js";
 
 
 
-const nasaAPi = api.create({
-  baseURL: 'https://api.nasa.gov/planetary/'
+// const nasaAPi = api.create({
+//   baseURL: 'https://api.nasa.gov/planetary/'
 
-})
+// })
 
-const apiKey = 's1RURnFHSIwTW93lBnhWPxRlmW9LONuuJcmG3XG7'
+// const apiKey = 's1RURnFHSIwTW93lBnhWPxRlmW9LONuuJcmG3XG7'
 
 class ImageService {
 
   async getImage() {
-    const response = await nasaAPi.get(`apod?api_key=${apiKey}`)
+    const response = await api.get(`api/images`)
     console.log('got Image', response.data)
     const image = new Images(response.data)
     AppState.activeImg = image

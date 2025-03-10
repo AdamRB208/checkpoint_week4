@@ -6,8 +6,6 @@ import { imageService } from "../services/ImageService.js";
 
 export class ImageController {
   constructor() {
-    console.log('APOD Controller Loaded')
-
     this.getImage()
   }
 

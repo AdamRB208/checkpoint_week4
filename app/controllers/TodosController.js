@@ -9,7 +9,7 @@ export class TodosController {
   constructor() {
     AppState.on('identity', this.getTodos)
     AppState.on('todos', this.drawTodos)
-    AppState.on('todos', this.toggleTodo)
+    // AppState.on('todos', this.toggleTodo)
 
   }
 
@@ -31,6 +31,14 @@ export class TodosController {
     const todoElem = document.getElementById('todoContent')
     todoElem.innerHTML = todoContent
     console.log('drawing To DOs');
+
+    // TODO draw the todo count
+
+    const incomplete = todos.filter(todo => !todo.completed)
+
+    document.getElementById('todoCount').innerText = `${incomplete.length}/${todos.length}`
+
+
   }
 
   async createTodo() {
@@ -69,6 +77,3 @@ export class TodosController {
   }
 }
 
-
-// NOTE next steps check spells for put functions
-// NOTE dont forget all other controllers for img, quotes, weather...
