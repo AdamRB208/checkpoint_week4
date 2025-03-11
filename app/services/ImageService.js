@@ -7,10 +7,10 @@ class ImageService {
 
   async getImage() {
     const response = await api.get(`api/images`)
-    console.log('got Image', response.data)
+    // console.log('got Image', response.data)
     const image = new Images(response.data)
     AppState.activeImg = image
-    console.log('Got Image from Service', AppState.activeImg);
+    // console.log('Got Image from Service', AppState.activeImg);
 
   }
 }

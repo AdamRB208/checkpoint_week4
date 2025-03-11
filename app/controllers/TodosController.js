@@ -28,11 +28,10 @@ export class TodosController {
     const todos = AppState.todos
     let todoContent = ''
     todos.forEach(todo => todoContent += todo.todosTemplate)
+
     const todoElem = document.getElementById('todoContent')
     todoElem.innerHTML = todoContent
-    console.log('drawing To DOs');
-
-    // TODO draw the todo count
+    // console.log('drawing To DOs');
 
     const incomplete = todos.filter(todo => !todo.completed)
 
@@ -65,7 +64,7 @@ export class TodosController {
 
   async toggleTodo(todoId) {
     try {
-      console.log('toggling todo with the id of' + todoId);
+      // console.log('toggling todo with the id of' + todoId);
       //== good to here
       await todosService.updateTodo(todoId)
     } catch (error) {

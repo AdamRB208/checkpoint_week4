@@ -13,20 +13,20 @@ export class ImageController {
 
   async getImage() {
     try {
-      console.log('getting image');
+      // console.log('getting image');
       await imageService.getImage()
     } catch (error) {
       Pop.error(error)
-      console.log('Could not get image', error)
+      console.error('Could not get image', error)
     }
   }
 
   async drawImage() {
     //TODO pull image from AppState, log it
     const image = AppState.activeImg
-    console.log('pulled image', image.imgUrls)
+    // console.log('pulled image', image.imgUrls)
     //TODO log imgURL that you want
-    console.log('logging image url', image.imgUrls.regular)
+    // console.log('logging image url', image.imgUrls.regular)
     // TODO grab Correct document ELement
     const imageElem = document.getElementById('main')
     imageElem.style.backgroundImage = `url(${image.imgUrls.regular})`
