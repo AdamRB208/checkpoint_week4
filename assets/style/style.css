@@ -2,14 +2,20 @@
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  background-position: center;
+
 }
 
 main {
-  background-size: 100vw, 100vh;
-  background-image: url(https://images.unsplash.com/photo-1636821771168-d13e578a88ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y2l0eSUyMHBob3RvZ3JhcGh5fGVufDB8MHwwfHx8Mg%3D%3);
-  content: auto;
+  flex-grow: 1;
+  display: flex;
+  place-content: center;
+  align-items: center;
+  background-size: cover;
+  min-height: 100vh;
+  min-width: 100vw;
 }
+
 
 #pop-toast-container {
   display: flex;
@@ -25,11 +31,16 @@ main {
 
 .form-bg {
   background-color: rgba(41, 40, 40, 0.498);
-  max-width: 50%;
-  max-height: 50%;
+  max-width: 100%;
+  max-height: 100%;
 
 }
 
 .quotes {
   color: lightgray;
+  flex-direction: row;
+}
+
+h1 {
+  margin-left: 2em;
 }

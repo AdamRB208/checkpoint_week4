@@ -27,15 +27,16 @@
 
   <main id="main">
 
-    <div id="clock">10:00</div>
+    <!-- <div id="clock">10:00</div> -->
 
 
-    <div class="container">
+    <div class="container d-flex justify-content-evely">
+      <div id="clock" class="me-4">10:00</div>
       <div class="row">
-        <div class="col 2 p-3 text-light rounded form-bg">
+        <div class="col 4 p-3 text-light rounded form-bg">
           <div class="mb-3">
             <form onsubmit="app.TodosController.createTodo()">
-              <label for="description">description</label>
+              <label for="description">Description</label>
               <input type="text" class="form-control" name="description" id="description" required maxlength="500">
               <button class="btn btn-outline-success" type="submit">Add</button>
             </form>
@@ -53,11 +54,11 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <h1 class="quotes">quotes go here</h1>
-        </div>
+      <!-- <div class="row"> -->
+      <div class="col-8 d-flex">
+        <h1 class="quotes">quotes go here</h1>
       </div>
+    </div>
     </div>
 
   </main>
